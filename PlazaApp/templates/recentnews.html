@@ -1,0 +1,28 @@
+{% load static %}
+<section class="blog-section padding">
+    <div class="container">
+    <div class="section-heading text-center mb-40 wow fadeInUp" data-wow-delay="100ms">
+    <span>From Blog</span>
+    <h2>Speciallized news</h2>
+    </div>
+    <div class="row blog-wrap">
+        {% for p in recentNews %}
+    <div class="col-lg-4 col-sm-6 sm-padding">
+    <div class="blog-item box-shadow">
+    <div class="blog-thumb">
+    <img src="{{p.imageurl}}" style="height: 230px;" alt="post">
+    <span class="category"><a href="#">{{p.cons_category}}</a></span>
+    </div>
+    <div class="blog-content">
+    <h3><a href="#">{{p.title}}</a></h3>
+    <p>{{p.details}}.</p>
+    <a href="#" class="read-more">Read More</a>
+    </div>
+    </div>
+    </div>
+        {% endfor %}
+    
+    
+    </div>
+    </div>
+    </section>

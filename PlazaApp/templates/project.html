@@ -1,0 +1,46 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block container %}
+<section class="page-header padding">
+    <div class="container">
+    <div class="page-content text-center">
+    <h2>Project single</h2>
+    <p>{{constructionPro.title}}</p>
+    </div>
+    </div>
+    </section>
+    <section class="project-single-section padding">
+    <div class="container">
+    <div class="row project-single-wrap align-items-center">
+    <div class="col-md-6 sm-padding">
+    <div id="project-single-carousel" class="project-single-carousel box-shadow owl-carousel">
+    <div class="single-carousel">
+    <img src="{{constructionPro.imageurl}}" style="height: 400px;" alt="img">
+    </div>
+    <div class="single-carousel">
+        <img src="img/project-s-2.jpg" alt="img">
+        </div>
+        <div class="single-carousel">
+        <img src="img/project-s-3.jpg" alt="img">
+        </div>
+    </div>
+    </div>
+    <div class="col-md-6 sm-padding">
+    <div class="project-single-content">
+    <h2>{{constructionPro.title}}</h2>
+    <p>{{constructionPro.details}}</p>
+    <ul class="project-details">
+    <li><span>Architects</span>: {{constructionPro.cons_architect}}</li>
+    <li><span>Location</span>: {{constructionPro.location}}</li>
+    <li><span>Category</span>: {{constructionPro.category}}</li>
+    <li><span>Area</span>: 119.0.563</li>
+    <li><span>Project Year</span>: {{constructionPro.created_at}}</li>
+    <li><span>Manufactures</span>: {{constructionPro.manufactures}}</li>
+    </ul>
+    </div>
+    </div>
+    </div>
+     </div>
+    </section>
+    
+{% endblock container %}

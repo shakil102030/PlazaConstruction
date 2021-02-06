@@ -1,0 +1,44 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block container %}
+<section class="page-header padding">
+    <div class="container">
+    <div class="page-content text-center">
+    <h2>About company</h2>
+    <p>Plaza Construction Company.</p>
+    </div>
+    </div>
+    </section>
+    <section class="service-section section-2 bg-grey padding">
+    <div class="dots"></div>
+    <div class="container">
+    <div class="row d-flex align-items-center">
+    <div class="col-lg-6 sm-padding">
+    <div class="service-content wow fadeInLeft">
+    <span>Explore The Features</span>
+    <h2>{{setting.title}}</h2>
+    <p>{{setting.description}}</p>
+    <a href="{%url 'ServicesView'%}" class="default-btn">Our All Services</a>
+    </div>
+    </div>
+    <div class="col-lg-6 sm-padding">
+    <div class="row services-list">
+        {% for p in service %}
+    <div class="col-md-6 padding-15">
+    <div class="service-item box-shadow wow fadeInUp" data-wow-delay="100ms">
+    <i class="{{p.tileicon}}"></i>  <!--flaticon-loader-->
+    <h3>{{p.title}}</h3>
+    <p>{{p.details}}</p>
+    </div>
+    </div>
+        {% endfor %}
+    
+ 
+   
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    
+{% endblock container %}

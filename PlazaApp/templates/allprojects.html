@@ -1,0 +1,32 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block container %}
+<section class="page-header padding">
+<div class="container">
+<div class="page-content text-center">
+<h2>Specialized projects</h2>
+<p>Construction & Building.</p>
+</div>
+</div>
+</section>
+<section class="projects-section padding">
+    <div class="container">
+    <div class="row">
+        {% for p in allPro %}
+    <div class="col-lg-4 col-sm-6 padding-15">
+    <div class="project-item">
+    <img src="{{p.imageurl}}" style="height: 200px;" alt="projects">
+    <div class="overlay"></div>
+    <a href="#" class="view-icon ajax-popup-link"> <i class="fas fa-expand"></i></a>
+    <div class="projects-content">
+    <a href="#" class="category">{{p.category}}</a>
+    <h3><a href="{%url 'Project' id=p.id%}" class="tittle">{{p.title}}</a></h3>
+    </div>
+    </div>
+    </div>
+        {% endfor %}
+
+    </div>
+    </div>
+    </section>
+{% endblock container %}

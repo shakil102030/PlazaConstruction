@@ -1,0 +1,59 @@
+{% load static %}
+<section class="projects-section padding">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-lg-8 col-md-6">
+            <div class="section-heading mb-40">
+            <span>Projects</span>
+            <h2>Discover the most fascinating <br>projects for our clients</h2>
+            </div>
+            </div>
+            <div class="col-lg-4 col-md-6 text-right">
+            <a href="{%url 'AllProjects'%}" class="default-btn">View All Projects</a>
+            </div>
+        </div>
+    <div id="projects-carousel" class="projects-carousel box-shadow owl-carousel">
+
+            {% for p in constructionPro %}
+        <div class="project-item">
+            <img src="{{p.imageurl}}" style="height: 270px;" alt="projects">
+            <div class="overlay"></div>
+            <a href="{%static ''%}img/project-1.jpg" class="view-icon img-popup" data-gall="project"> <i class="fas fa-expand"></i></a>
+            <div class="projects-content">
+            <a href="#" class="category">{{p.category}}</a>
+            <h3><a href="{%url 'Project' id=p.id%}" class="tittle">{{p.title}}</a></h3>
+            </div>
+        </div>
+            {% endfor %}
+
+    
+    
+    </div>
+    </div>
+    </section>
+    <div class="cta-section padding">
+        <div class="container">
+        <div class="cta-content text-center">
+        <span class="wow fadeInUp">Explore The Features</span>
+        <h2 class="wow fadeInUp" data-wow-delay="300ms">The best constructions <br>company since 1985</h2>
+        <a href="#" class="default-btn wow fadeInUp" data-wow-delay="500ms">Get Free Quote</a>
+        </div>
+        </div>
+        </div>
+        <section class="content-section padding">
+        <div class="container">
+        <div class="row content-wrap">
+        <div class="col-lg-6 sm-padding wow fadeInLeft" data-wow-delay="100ms">
+        <img class="box-shadow" class="box-shadow" src="{%static ''%}img/content-1.jpg" alt="img">
+        </div>
+        <div class="col-lg-6 sm-padding">
+        <div class="content-info wow fadeInRight" data-wow-delay="300ms">
+        <span>Explore The Features</span>
+        <h2>Offering the most complete integrated package!</h2>
+        <p>We are committed to building a sustainable future by fostering a collaborative spirit that creates exceptional experiences, balanced relationships, and community built environment. Building isn’t just job. It's our passion. With every project we undertake, we set the bar high and provide the best industry.</p>
+        <a href="#" class="default-btn">Get Free Quote</a>
+        </div>
+        </div>
+        </div>
+        </div>
+        </section>
